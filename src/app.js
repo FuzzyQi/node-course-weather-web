@@ -5,12 +5,8 @@ const hbs = require("hbs")
 const geocode = require("./utils/geocode")
 const forecast = require("./utils/forecast")
 
-// Create footer partial 
-// Setup a footer partial: Created by {some name}
-// Use it at the bottom of our 3 pages
-
-
 const app = express()
+const port = process.env.PORT || 3000
 
 // Define paths for express config
 const publicDirectoryPath = path.join(__dirname, "../public")
@@ -119,14 +115,6 @@ app.get("*", (req, res)=>{
 })
 
 
-app.listen(3000, ()=>{
-  console.log("Server is running on port 3000")
+app.listen(port, ()=>{
+  console.log(`Server is running on port ${port}`)
 })
-
-
-// Create & rednder 404 page
-// Setup template to render header & footer 
-// Setup page to render an error message in a p 
-// Render template for both 4040 routes 
-//  - Page not found 
-//  - OR Help article not found 

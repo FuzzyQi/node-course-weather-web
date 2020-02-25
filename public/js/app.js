@@ -21,7 +21,7 @@ weatherForm.addEventListener("submit", (e)=>{
 const getForecast = async (address) =>{
   message.textContent = "Loading..."
   messageAux.textContent = ""
-  const res = await fetch(`http://localhost:3000/weather?address=${address}`)
+  const res = await fetch(`/weather?address=${address}`)
   const data = await res.json()
   if(data.error){
     console.log(data.error)
