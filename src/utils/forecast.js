@@ -11,7 +11,8 @@ const forecast = (lang, lng, lat, callback)=>{
     } else if (body.error){
       callback("Unable to find location weather. Try another search")
     } else {
-      callback(undefined, body.daily.data[0].summary + `\nIt is currently ${body.currently.temperature} degrees out.\nThere is a ${body.currently.precipProbability}% chance of rain`)
+      console.log("..........")
+      callback(undefined, body.daily.data[0].summary + `\nIt is currently ${body.currently.temperature} degrees out.\nThere is a ${body.currently.precipProbability}% chance of rain\nThe high today is: ${body.daily.data[0].temperatureHigh} and low: ${body.daily.data[0].temperatureLow}`)
     }
   })
 }
